@@ -18,13 +18,23 @@
             height: 100%;
             padding: 0;
             margin: 0;
+            overflow: hidden;
+            background: #111;
         }
+        
         .leaflet-control-layers-toggle {
             display: none !important;
         }
+        
         .leaflet-control-layers {
             display: block !important;
+            margin: 10px !important;
+            background: rgba(0, 0, 0, 0.7) !important;
+            color: white !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(4px);
         }
+        
         .osint-label {
             position: absolute;
             top: 10px;
@@ -32,33 +42,38 @@
             z-index: 1000;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
-            color: rgba(255,255,255,0.85);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+            color: rgba(255, 255, 255, 0.85);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
             pointer-events: auto;
         }
+        
         .osint-label a {
-            color: rgba(255,255,255,0.85) !important;
+            color: rgba(255, 255, 255, 0.85) !important;
             text-decoration: none;
         }
+        
         .osint-label a:hover {
             color: #fff !important;
             text-decoration: underline;
         }
+        
         .map-title {
             position: absolute;
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.15);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 8px;
             padding: 5px 15px;
             text-align: center;
             width: auto;
             max-width: 90%;
         }
+        
         .map-title h1 {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -66,106 +81,138 @@
             color: white;
             text-transform: uppercase;
         }
+        
         .map-title p {
             margin: 2px 0 0;
             font-size: clamp(9px, 2vw, 11px);
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
         }
+        
         .gear-search {
             position: absolute;
-            bottom: 20px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             border-radius: 8px;
             padding: 6px 12px;
             width: auto;
             max-width: 95%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        
         .gear-search-label {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
-            color: rgba(255,255,255,0.55);
+            color: rgba(255, 255, 255, 0.55);
             letter-spacing: 0.06em;
             text-transform: uppercase;
-            pointer-events: none;
+            white-space: nowrap;
         }
+        
         .gear-search input {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 5px;
             color: #fff;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            padding: 4px 10px;
-            width: 200px;
             outline: none;
-            transition: border-color 0.2s, background 0.2s;
-            width: clamp(100px, 40vw, 200px);
-            font-size: 12px;
-            padding: 4px;
+            transition: all 0.2s;
+            width: clamp(120px, 40vw, 220px);
+            font-size: 13px;
+            padding: 6px 10px;
         }
-        .gear-search input::placeholder {
-            color: rgba(255,255,255,0.35);
-        }
+        
         .gear-search input:focus {
-            border-color: rgba(255,255,255,0.5);
-            background: rgba(255,255,255,0.15);
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
         }
+        
         .gear-search-count {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
-            color: rgba(255,255,255,0.45);
-            min-width: 60px;
+            color: rgba(255, 255, 255, 0.45);
+            min-width: 50px;
         }
-        .gear-search-clear {
-            background: none;
-            border: none;
-            color: rgba(255,255,255,0.4);
-            font-size: 14px;
-            cursor: pointer;
-            padding: 0 2px;
-            line-height: 1;
-            transition: color 0.15s;
-            display: none;
-        }
-        .gear-search-clear:hover {
-            color: rgba(255,255,255,0.9);
-        }
+        
         .custom-legend {
             position: absolute;
-            top: 45px; /* Ajusté pour laisser respirer le label OSINT Me That */
-            left: clamp(10px, 5vw, 50px); /* 50px sur PC, mais glisse vers le bord sur mobile */
+            top: 45px;
+            left: clamp(10px, 5vw, 50px);
             z-index: 1000;
-            background: rgba(0,0,0,0.5); /* Un peu plus sombre pour la lisibilité */
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 8px;
-            padding: clamp(4px, 1.5vw, 6px) clamp(8px, 2vw, 12px);
+            padding: 6px 10px;
             display: flex;
             align-items: center;
             gap: 8px;
             pointer-events: none;
-            max-width: fit-content;
         }
         
         .custom-legend img {
-            width: clamp(18px, 4vw, 24px); /* L'icône réduit sur mobile */
+            width: clamp(18px, 4vw, 24px);
             height: auto;
         }
         
         .custom-legend span {
             font-family: Arial, Helvetica, sans-serif;
-            font-size: clamp(10px, 2.5vw, 12px); /* Texte fluide */
-            color: rgba(255,255,255,0.9);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+            font-size: clamp(10px, 2.5vw, 12px);
+            color: rgba(255, 255, 255, 0.9);
             white-space: nowrap;
+        }
+        
+        @media (max-width: 650px) {
+            .osint-label, 
+            .gear-search-label, 
+            .map-title p {
+                display: none !important;
+            }
+        
+            .custom-legend {
+                top: auto;
+                bottom: 80px;
+                left: 10px;
+                background: rgba(0, 0, 0, 0.8);
+            }
+        
+            .gear-search {
+                bottom: 10px;
+                width: 92%;
+                padding: 8px;
+                justify-content: space-between;
+            }
+        
+            .gear-search input {
+                flex-grow: 1;
+                font-size: 16px;
+            }
+        
+            .map-title {
+                top: 5px;
+                padding: 4px 10px;
+                background: rgba(0, 0, 0, 0.8);
+            }
+        
+            .leaflet-control-zoom {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .custom-legend span {
+                display: none;
+            }
+            .gear-search-count {
+                display: none;
+            }
         }
         </style>
     <body>
