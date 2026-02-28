@@ -46,55 +46,46 @@
         }
         .map-title {
             position: absolute;
-            top: 16px;
+            top: 10px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            background: rgba(0,0,0,0.45);
+            background: rgba(0,0,0,0.5);
             backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
             border: 1px solid rgba(255,255,255,0.15);
             border-radius: 8px;
-            padding: 8px 20px;
+            padding: 5px 15px;
             text-align: center;
-            pointer-events: none;
-            white-space: nowrap;
+            width: auto;
+            max-width: 90%;
         }
         .map-title h1 {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            color: rgba(255,255,255,0.95);
-            letter-spacing: 0.08em;
+            font-family: Arial, sans-serif;
+            font-size: clamp(12px, 3vw, 16px);
+            color: white;
             text-transform: uppercase;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
         }
         .map-title p {
-            margin: 3px 0 0;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
-            font-weight: 400;
+            margin: 2px 0 0;
+            font-size: clamp(9px, 2vw, 11px);
             color: rgba(255,255,255,0.7);
-            letter-spacing: 0.04em;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
         .gear-search {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.15);
             border-radius: 8px;
-            padding: 7px 14px;
-            white-space: nowrap;
+            padding: 6px 12px;
+            width: auto;
+            max-width: 95%;
         }
         .gear-search-label {
             font-family: Arial, Helvetica, sans-serif;
@@ -115,6 +106,9 @@
             width: 200px;
             outline: none;
             transition: border-color 0.2s, background 0.2s;
+            width: clamp(100px, 40vw, 200px);
+            font-size: 12px;
+            padding: 4px;
         }
         .gear-search input::placeholder {
             color: rgba(255,255,255,0.35);
