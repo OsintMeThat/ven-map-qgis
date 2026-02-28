@@ -139,29 +139,33 @@
         }
         .custom-legend {
             position: absolute;
-            top: 40px; /* Positionné juste en dessous de OSINT Me That */
-            left: 50px; /* Aligné avec OSINT Me That */
+            top: 45px; /* Ajusté pour laisser respirer le label OSINT Me That */
+            left: clamp(10px, 5vw, 50px); /* 50px sur PC, mais glisse vers le bord sur mobile */
             z-index: 1000;
-            background: rgba(0,0,0,0.45);
+            background: rgba(0,0,0,0.5); /* Un peu plus sombre pour la lisibilité */
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
             border: 1px solid rgba(255,255,255,0.15);
             border-radius: 8px;
-            padding: 6px 12px;
+            padding: clamp(4px, 1.5vw, 6px) clamp(8px, 2vw, 12px);
             display: flex;
             align-items: center;
-            gap: 10px;
-            pointer-events: none; /* Laisse passer les clics vers la carte en dessous si besoin */
+            gap: 8px;
+            pointer-events: none;
+            max-width: fit-content;
         }
+        
         .custom-legend img {
-            width: 24px;
-            height: 24px;
+            width: clamp(18px, 4vw, 24px); /* L'icône réduit sur mobile */
+            height: auto;
         }
+        
         .custom-legend span {
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
+            font-size: clamp(10px, 2.5vw, 12px); /* Texte fluide */
             color: rgba(255,255,255,0.9);
             text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+            white-space: nowrap;
         }
         </style>
     <body>
