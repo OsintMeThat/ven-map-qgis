@@ -172,36 +172,47 @@
         @media (max-width: 650px) {
             .osint-label, 
             .map-title, 
+            .custom-legend,
             .gear-search-label,
-            .gear-search-count {
+            .gear-search-count,
+            .leaflet-control-measure,
+            .leaflet-control-scale {
                 display: none !important;
             }
         
             .leaflet-control-layers {
                 margin: 5px !important;
-                padding: 2px !important;
-                font-size: 11px !important;
+                padding: 2px 5px !important;
+                font-size: 10px !important;
+                max-width: 120px;
             }
         
-            .leaflet-control-layers-list {
-                padding: 2px !important;
+            .leaflet-control-layers-list label {
+                margin-bottom: 2px !important;
             }
         
             .gear-search {
                 bottom: 8px;
-                width: 85%;
-                padding: 4px 8px;
+                width: 70%;
+                padding: 4px 6px;
+                gap: 4px;
             }
         
             .gear-search input {
                 width: 100%;
-                height: 28px;
+                height: 24px;
                 font-size: 14px;
-                padding: 2px 8px;
+                padding: 0 8px;
             }
         
             .leaflet-control-zoom {
-                display: none;
+                display: none !important;
+            }
+        
+            .leaflet-bar a {
+                width: 24px !important;
+                height: 24px !important;
+                line-height: 24px !important;
             }
         }
         </style>
