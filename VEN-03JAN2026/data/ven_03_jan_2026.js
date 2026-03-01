@@ -1608,7 +1608,7 @@ var json_ven_03_jan_2026 = {
         "Date":        "03 JAN 2026",
         "Description": "Point of view - 2 MH-47 and 1 MH-60 appear to be heading east.",
         "Source":      "https://www.instagram.com/p/DTG728Xkol3/",
-        "Geolocation": "Read the article \"Operation Absolute Resolve: The Night Maduro was Taken \u2013 A Full OSINT Reconstruction\" on osintmethat.com",
+        "Geolocation": "https://x.com/LoLManya/status/2028106356624933100",
         "Source type": "VID",
         "Gear":        "2 MH-47 + 1 MH-60M",
         "Plus Code":   "94V4+8XH Hoyo de la Puerta, Miranda, Venezuela",
@@ -1744,7 +1744,7 @@ var json_ven_03_jan_2026 = {
         "Date":        "03 JAN 2026",
         "Description": "Point of view - Numerous helicopters were seen flying from west to east. Seven MH-60Ms were spotted, followed by five MH-47 SOARs & then another one MH-60M.",
         "Source":      "https://www.instagram.com/urreiztieta_news_team/p/DT5_LlAiZks/",
-        "Geolocation": "Read the article \"Operation Absolute Resolve: The Night Maduro was Taken \u2013 A Full OSINT Reconstruction\" on osintmethat.com",
+        "Geolocation": "https://x.com/LoLManya/status/2028106883664412822",
         "Source type": "VID",
         "Gear":        "7 MH-60M + 5 MH-47 + 1 MH-60M",
         "Plus Code":   "843G+89F Los Anacuos, Miranda, Venezuela",
@@ -1755,4 +1755,5 @@ var json_ven_03_jan_2026 = {
       }
     }
   ]
+
 };
