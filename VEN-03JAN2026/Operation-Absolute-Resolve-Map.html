@@ -114,11 +114,11 @@
             text-transform: uppercase;
         }
 
-        .view-counter img {
-            height: 13px;
-            width: auto;
-            opacity: 0.6;
-            filter: brightness(0) invert(1);
+        #viewCount {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+            font-variant-numeric: tabular-nums;
         }
         
         .gear-search {
@@ -293,7 +293,7 @@
         <!-- VIEW COUNTER -->
         <div class="view-counter">
             <span>views</span>
-            <img src="https://hits.sh/osintmethat.github.io/ven-map-qgis/VEN-03JAN2026/Operation-Absolute-Resolve-Map.html.svg?style=flat&color=ffffff&labelColor=000000" alt="views" />
+            <span id="viewCount">—</span>
         </div>
 
         <div class="gear-search">
@@ -768,7 +768,14 @@
             filterByGear('');
             gearInput.focus();
         });
-        // ────────────────────────────────────────────────────────
-        </script>        
+        // ── VIEW COUNTER ────────────────────────────────────────
+        fetch('https://hits.sh/osintmethat.github.io/ven-map-qgis/VEN-03JAN2026/Operation-Absolute-Resolve-Map.html.json')
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+                document.getElementById('viewCount').textContent =
+                    Number(d.count).toLocaleString();
+            })
+            .catch(function() {});
+        // ────────────────────────────────────────────────────────</script>        
     </body>
 </html>
