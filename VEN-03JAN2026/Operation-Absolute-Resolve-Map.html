@@ -87,6 +87,39 @@
             font-size: clamp(9px, 2vw, 11px);
             color: rgba(255, 255, 255, 0.7);
         }
+
+        /* ── VIEW COUNTER ── */
+        .view-counter {
+            position: absolute;
+            top: 38px;
+            left: 50px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 3px 8px;
+            pointer-events: none;
+        }
+
+        .view-counter span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .view-counter img {
+            height: 13px;
+            width: auto;
+            opacity: 0.6;
+            filter: brightness(0) invert(1);
+        }
         
         .gear-search {
             position: absolute;
@@ -179,6 +212,12 @@
             .leaflet-control-scale {
                 display: none !important;
             }
+
+            /* Keep counter visible on mobile, reposition it */
+            .view-counter {
+                top: 8px;
+                left: 8px;
+            }
         
             .leaflet-control-layers {
                 margin: 5px !important;
@@ -250,6 +289,13 @@
             <h1>Operation Absolute Resolve</h1>
             <p>Jan 3, 2026 &mdash; Night Ops &amp; Post-Assault Imagery</p>
         </div>
+
+        <!-- VIEW COUNTER -->
+        <div class="view-counter">
+            <span>views</span>
+            <img src="https://hits.sh/osintmethat.github.io/ven-map-qgis/VEN-03JAN2026/Operation-Absolute-Resolve-Map.html.svg?style=flat&color=ffffff&labelColor=000000" alt="views" />
+        </div>
+
         <div class="gear-search">
             <span class="gear-search-label">🔧 Gear search</span>
             <input type="text" id="gearSearchInput" placeholder="e.g. MH-60, MH-47, Buk-M2E..." />
