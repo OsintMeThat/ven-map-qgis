@@ -769,12 +769,12 @@
             gearInput.focus();
         });
         // ── VIEW COUNTER ────────────────────────────────────────
-        fetch('https://api.countapi.xyz/hit/osintmethat-ven-map/absolute-resolve')
+        fetch('https://api.counterapi.dev/v1/osintmethat/ven-map/up')
             .then(function(r) { return r.json(); })
             .then(function(d) {
-                if (d && d.value !== undefined) {
+                if (d && d.count !== undefined) {
                     document.getElementById('viewCount').textContent =
-                        Number(d.value).toLocaleString();
+                        Number(d.count).toLocaleString();
                 }
             })
             .catch(function() {});
