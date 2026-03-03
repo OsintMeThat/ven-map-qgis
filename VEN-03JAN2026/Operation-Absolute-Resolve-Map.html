@@ -769,11 +769,13 @@
             gearInput.focus();
         });
         // ── VIEW COUNTER ────────────────────────────────────────
-        fetch('https://hits.sh/osintmethat.github.io/ven-map-qgis/VEN-03JAN2026/Operation-Absolute-Resolve-Map.html.json')
+        fetch('https://api.countapi.xyz/hit/osintmethat-ven-map/absolute-resolve')
             .then(function(r) { return r.json(); })
             .then(function(d) {
-                document.getElementById('viewCount').textContent =
-                    Number(d.count).toLocaleString();
+                if (d && d.value !== undefined) {
+                    document.getElementById('viewCount').textContent =
+                        Number(d.value).toLocaleString();
+                }
             })
             .catch(function() {});
         // ────────────────────────────────────────────────────────</script>        
