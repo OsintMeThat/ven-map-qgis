@@ -488,37 +488,21 @@
                 },
                 mouseover: highlightFeature,
             });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Date</th>\
-                        <td>' + (feature.properties['Date'] !== null ? autolinker.link(String(feature.properties['Date']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Description</th>\
-                        <td>' + (feature.properties['Description'] !== null ? autolinker.link(String(feature.properties['Description']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Plus Code</th>\
-                        <td>' + (feature.properties['Plus Code'] !== null ? autolinker.link(String(feature.properties['Plus Code']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Source</th>\
-                        <td>' + (feature.properties['Source'] !== null ? autolinker.link(String(feature.properties['Source']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Geolocation</th>\
-                        <td>' + (feature.properties['Geolocation'] !== null ? autolinker.link(String(feature.properties['Geolocation']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Source type</th>\
-                        <td>' + (feature.properties['Source type'] !== null ? autolinker.link(String(feature.properties['Source type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    ' + (feature.properties['Gear'] && String(feature.properties['Gear']).trim() !== '' ? '<tr><th scope="row">Gear</th><td>' + autolinker.link(String(feature.properties['Gear']).replace(/\'/g, "'").toLocaleString()) + '</td></tr>' : '') + '\
-                    <tr>\
-                        <th scope="row">Coordinates</th>\
-                        <td>' + (feature.properties['Coordinates'] !== null ? autolinker.link(String(feature.properties['Coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
+            var p = feature.properties;
+            function row(label, val) {
+                if (val === null || val === undefined || String(val).trim() === '') return '';
+                return '<tr><th scope="row">' + label + '</th><td>' + autolinker.link(String(val).replace(/'/g, "'").toLocaleString()) + '</td></tr>';
+            }
+            var popupContent = '<table>'
+                + row('Date', p['Date'])
+                + (p['Estimated time'] && String(p['Estimated time']).trim() !== '' ? row('Estimated time', p['Estimated time']) : '')
+                + row('Description', p['Description'])
+                + row('Plus Code', p['Plus Code'])
+                + row('Coordinates', p['Coordinates'])
+                + row('Gear', p['Gear'])
+                + row('Source', p['Source'])
+                + row('Geolocation', p['Geolocation'])
+                + '</table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
             layer.on('popupopen', function(e) {
                 addClassToPopupIfMedia(content, e.popup);
