@@ -1727,7 +1727,7 @@ var json_ven_03_jan_2026 = {
         "Date":        "03 JAN 2026",
         "Description": "Point of view - Many helicopters are flying over Fuerte Tiuna at 2:00 AM. One or two MH-47s can be observed at close range conducting an insertion within the perimeter of the Maduro's compound",
         "Source":      "https://www.facebook.com/watch/?v=2409173692831769",
-        "Geolocation": "Read the article \"Operation Absolute Resolve: The Night Maduro was Taken \u2013 A Full OSINT Reconstruction\" on osintmethat.com",
+        "Geolocation": "https://x.com/LoLManya/status/2032089383235354959",
         "Source type": "VID",
         "Gear":        "MH-47 + MH-60M",
         "Plus Code":   "C3XG+RR3 Caracas, Capital District, Venezuela",
@@ -1757,3 +1757,4 @@ var json_ven_03_jan_2026 = {
   ]
 
 };
+
