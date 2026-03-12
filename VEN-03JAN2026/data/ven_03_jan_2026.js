@@ -1710,7 +1710,7 @@ var json_ven_03_jan_2026 = {
         "Date":        "03 JAN 2026",
         "Description": "Point of view - A formation of 14 helicopters, including 5 MH-47s and 9 MH-60s, were spotted flying towards Higuerote.",
         "Source":      "https://www.tiktok.com/@royer27f/video/7591049822971514168",
-        "Geolocation": "Read the article \"Operation Absolute Resolve: The Night Maduro was Taken \u2013 A Full OSINT Reconstruction\" on osintmethat.com",
+        "Geolocation": "https://x.com/LoLManya/status/2032131636905550131",
         "Source type": "VID",
         "Gear":        "7 MH-60M + 5 MH-47 + 2 MH-60M",
         "Plus Code":   "CPMF+3QH Capaya, Miranda, Venezuela",
@@ -1757,4 +1757,5 @@ var json_ven_03_jan_2026 = {
   ]
 
 };
+
 
